@@ -8,18 +8,7 @@
 		<property name="code" value="IN" />
 		<property name="name" value="India" />
 	</bean>
-    <bean id="in" class="com.cognizant.springlearn.Country">
-		<property name="code" value="US" />
-		<property name="name" value="United States" />
-	</bean>
-    <bean id="de" class="com.cognizant.springlearn.Country">
-		<property name="code" value="DE" />
-		<property name="name" value="Germany" />
-	</bean>
-    <bean id="jp" class="com.cognizant.springlearn.Country">
-		<property name="code" value="JP" />
-		<property name="name" value="Japan" />
-	</bean>
+    
 	
 </beans>
 
