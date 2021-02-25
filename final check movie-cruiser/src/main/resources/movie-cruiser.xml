@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="dd/MM/yyyy"/>
+	</bean>
+	
+	<bean id="avatar" class="com.cognizant.moviecruiser.model.Movie" name="avatar">
+		<property name="id" value="1"/>
+		<property name="title" value="Avatar"/>
+		<property name="boxOffice" value="23.7"/>
+		<property name="active" value="false"/>
+		<property name="dateOfLaunch" >
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="18/12/2009"/>
+			</bean>
+		</property>
+		<property name="genre" value="Sci-fi"/>
+		<property name="teaser" value="true"/>
+	</bean>
+	
+	<bean id="johnWick" class="com.cognizant.moviecruiser.model.Movie" name="johnWick">
+		<property name="id" value="2"/>
+		<property name="title" value="John Wick"/>
+		<property name="boxOffice" value="8.6"/>
+		<property name="active" value="true"/>
+		<property name="dateOfLaunch" >
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="14/11/2014"/>
+			</bean>
+		</property>
+		<property name="genre" value="Action"/>
+		<property name="teaser" value="true"/>
+	</bean>
+	
+	<bean id="enolaHolmes" class="com.cognizant.moviecruiser.model.Movie" name="enolaHolmes">
+		<property name="id" value="3"/>
+		<property name="title" value="Enola Holmes"/>
+		<property name="boxOffice" value="216"/>
+		<property name="active" value="true"/>
+		<property name="dateOfLaunch" >
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="23/09/2020"/>
+			</bean>
+		</property>
+		<property name="genre" value="Mystery"/>
+		<property name="teaser" value="false"/>
+	</bean>
+	
+	<bean id="theTrumanShow" class="com.cognizant.moviecruiser.model.Movie" name="theTrumanShow">
+		<property name="id" value="4"/>
+		<property name="title" value="The Truman Show"/>
+		<property name="boxOffice" value="26.41"/>
+		<property name="active" value="false"/>
+		<property name="dateOfLaunch" >
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="01/06/1998"/>
+			</bean>
+		</property>
+		<property name="genre" value="Drama"/>
+		<property name="teaser" value="false"/>
+	</bean>
+	
+	<bean id="harryPotter" class="com.cognizant.moviecruiser.model.Movie" name="harryPotter">
+		<property name="id" value="5"/>
+		<property name="title" value="Harry Potter"/>
+		<property name="boxOffice" value="100.2"/>
+		<property name="active" value="true"/>
+		<property name="dateOfLaunch" >
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="31/07/2016"/>
+			</bean>
+		</property>
+		<property name="genre" value="Fantasy"/>
+		<property name="teaser" value="true"/>
+	</bean>
+	
+	<bean id="inception" class="com.cognizant.moviecruiser.model.Movie" name="inception">
+		<property name="id" value="6"/>
+		<property name="title" value="Inception"/>
+		<property name="boxOffice" value="83.68"/>
+		<property name="active" value="true"/>
+		<property name="dateOfLaunch" >
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="16/07/2010"/>
+			</bean>
+		</property>
+		<property name="genre" value="Action"/>
+		<property name="teaser" value="true"/>
+	</bean>
+	
+	<bean id="movieList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="avatar"/>
+				<ref bean="johnWick"/>
+				<ref bean="theTrumanShow"/>
+				<ref bean="harryPotter"/>
+				<ref bean="enolaHolmes"/>
+				<ref bean="inception"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>
